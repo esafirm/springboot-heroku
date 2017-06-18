@@ -19,4 +19,10 @@ class HelloController {
     @RequestMapping("/")
     @ResponseBody
     fun home(): String = "Hello World"
+
+    @RequestMapping("/api")
+    @ResponseBody
+    fun welcome(): CommonResponse = CommonResponse(true, "Welcome to Spring boot playground")
 }
+
+data class CommonResponse(val success: Boolean, val message: String)
