@@ -1,5 +1,7 @@
 package com.example.sprinbootsample.message
 
-class MessageFilter {
-    fun filter(message: String): String = message.replace("test", "****")
+import com.example.sprinbootsample.StringFilter
+
+class MessageFilter : StringFilter {
+    override fun filter(text: String): String = text.replace("test", "****")
 }

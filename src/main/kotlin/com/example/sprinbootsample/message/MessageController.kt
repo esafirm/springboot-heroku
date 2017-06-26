@@ -1,5 +1,6 @@
 package com.example.sprinbootsample.message
 
+import com.example.sprinbootsample.StringFilter
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
@@ -13,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod
 class MessageController {
 
     @Autowired lateinit var messageRepo: MessageRepository
-    @Autowired lateinit var messageFilter: MessageFilter
+    @Autowired lateinit var messageFilter: StringFilter
 
     @RequestMapping(method = arrayOf(RequestMethod.GET))
     fun getMessages() = ResponseEntity(messageRepo.findAll().map {
