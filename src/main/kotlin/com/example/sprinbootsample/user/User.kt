@@ -7,7 +7,7 @@ import javax.persistence.*
 @Table(name = "User")
 class User @PersistenceConstructor constructor(
         @Id @Column(name = "user_id")
-        @GeneratedValue(strategy = GenerationType.AUTO) val id: Long,
-        @Column val name: String,
-        @Column val age: Int
+        @GeneratedValue(strategy = GenerationType.AUTO) val id: Long = -1,
+        @Column val name: String = "",
+        @Column val age: Int = 0
 )

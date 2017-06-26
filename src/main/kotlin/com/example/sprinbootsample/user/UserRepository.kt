@@ -1,5 +1,5 @@
 package com.example.sprinbootsample.user
 
-import org.springframework.data.repository.PagingAndSortingRepository
+import org.springframework.data.repository.CrudRepository
 
-interface UserRepository : PagingAndSortingRepository<User, String>
+interface UserRepository : CrudRepository<User, String>

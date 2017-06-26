@@ -13,9 +13,12 @@ import org.springframework.web.bind.annotation.RequestMethod
 class MessageController {
 
     @Autowired lateinit var messageRepo: MessageRepository
+    @Autowired lateinit var messageFilter: MessageFilter
 
     @RequestMapping(method = arrayOf(RequestMethod.GET))
-    fun getMessages() = ResponseEntity(messageRepo.findAll(), HttpStatus.OK)
+    fun getMessages() = ResponseEntity(messageRepo.findAll().map {
+        it.copy(message = messageFilter.filter(it.message))
+    }, HttpStatus.OK)
 
     @RequestMapping(method = arrayOf(RequestMethod.POST))
     fun addMessage(@RequestBody message: Message): ResponseEntity<*> {
