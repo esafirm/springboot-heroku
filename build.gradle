@@ -39,6 +39,11 @@ dependencies {
     compile 'com.h2database:h2'
     compile 'com.fasterxml.jackson.module:jackson-module-kotlin:2.8.7'
 
+    /* Youtube API */
+    compile 'com.google.api-client:google-api-client:1.22.0'
+    compile 'com.google.oauth-client:google-oauth-client-jetty:1.22.0'
+    compile 'com.google.apis:google-api-services-youtube:v3-rev183-1.22.0'
+
     compile("org.jetbrains.kotlin:kotlin-stdlib-jre8:${kotlinVersion}")
     compile("org.jetbrains.kotlin:kotlin-reflect:${kotlinVersion}")
     testCompile('org.springframework.boot:spring-boot-starter-test')
